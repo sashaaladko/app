@@ -11,6 +11,7 @@ ul{
 }
 li{
     padding-right: 14px;
+    text-decoration: none;
 }
 li:hover{
     color: #464a47;
@@ -20,6 +21,10 @@ li:hover{
 .dropDown {
     position: relative;
     display: inline-block;
+}
+.dropDown a{
+    text-decoration: none;
+    color: black;
 }
 
 .dropDownContent {

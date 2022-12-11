@@ -4,3 +4,18 @@
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     padding: 12px;
 }
+
+.wrapper h1{
+    text-decoration: none;
+    color: black;
+}
+
+.wrapper{
+    border: 2px solid rgb(149, 147, 147);
+    margin: 6px;
+    min-height: 319px;
+}
+
+.container a{
+    text-decoration: none;
+}

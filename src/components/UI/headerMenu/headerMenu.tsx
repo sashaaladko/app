@@ -46,11 +46,10 @@ function HeaderMenu() {
       {title: "Рыба охлажденная", link: "fishcold"},
       {title: "Рыба и морепродукты готовые", link: "fishdone"},
       {title: "Рыба свежемороженая", link: "fishfresh"},
-      {title: "Капуста морская, чука", link: "chuka"},
       {title: "Икра", link: "ikra"},
     ]},
-    {title: "Вода, напитки", link: "water", list: [
-      {title: "Вода", link: "waters"},
+    {title: "Вода, напитки", link: "drinks", list: [
+      {title: "Вода", link: "water"},
       {title: "Квас", link: "kvas"},
       {title: "Соки", link: "juice"},
       {title: "Энергетические напитки", link: "energetics"},
@@ -61,7 +60,7 @@ function HeaderMenu() {
     {title: "Бакалея", link: "bak",  list: [
       {title: "Мука, мучные смеси", link: "flour"},
       {title: "Макаронные изделия", link: "pasta"},
-      {title: "Крупа и бобовые", link: "groats"},
+      {title: "Крупа и бобовые", link: "beans"},
       {title: "Масло растительное, уксус", link: "oil"},
       {title: "Соль, сахар, специи", link: "spices"},
       {title: "Хлопья, каши, мюсли", link: "porridge"},

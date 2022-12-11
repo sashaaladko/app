@@ -64,11 +64,14 @@ function useSubCategories(subCategoriesName:string|undefined){
         ]},
     ]
 
-    categories.map((e)=>{
-        if(subCategoriesName==e.link){
-            return e.list
-        }
-    })
+    // const a = categories.map((e)=>{
+    //     if(subCategoriesName==e.link){
+    //         return e.list
+    //     }
+    // })
+
+   return categories.find((e:any)=>subCategoriesName==e.link)
+
 }
 
 export default useSubCategories

@@ -19,7 +19,7 @@ const chosenCategory = useCategories(categoriesName)
     return(
         <>
         <HeaderComponent/>
-        {chosenCategory=='not found'?<NotFound/>: <ChosenCategoryRender chosenCategory={chosenCategory}/>}
+        {chosenCategory=='not found'?<NotFound/>: <ChosenCategoryRender chosenCategory={chosenCategory} categoriesName={categoriesName}/>}
            
         </>
     )

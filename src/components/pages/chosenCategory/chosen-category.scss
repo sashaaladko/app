@@ -1,0 +1,17 @@
+.container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    padding: 12px;
+    margin-left: 120px;
+    margin-right: 100px;
+}
+
+.wrapperProd{
+    border: 2px solid rgb(149, 147, 147);
+    margin: 6px;
+    padding-bottom: 3px;
+    max-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

@@ -1,0 +1,77 @@
+.navbarMenu{
+
+}
+
+.hidden-menu {
+    display: block;
+    position: absolute;
+    list-style:none;
+    padding: 10px;
+    margin: 0;
+    margin-top: 80px;
+    box-sizing: border-box;
+    width: 200px;
+    background-color: #eee;
+    height: 100%;
+    top: 0;
+    left: -200px;
+    transition: left .2s;
+    z-index: 2;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+  .hidden-menu li{
+    margin-top: 36px;
+  }
+  
+  .hidden-menu-ticker {
+    display: none;
+  }
+  
+  .btn-menu {
+    margin-top: 80px;
+    color: #fff;
+    background-color: #fec60a;
+    padding: 7px;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    cursor: pointer;
+    transition: left .23s;
+    z-index: 3;
+    width: 25px;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+  .btn-menu span {
+    display: block;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px 0 0;
+    transition: all .1s linear .23s;
+    position: relative;
+  }
+  .btn-menu span.first {
+    margin-top: 0;
+  }
+  
+  .hidden-menu-ticker:checked ~ .btn-menu {
+    left: 160px;
+  }
+  .hidden-menu-ticker:checked ~ .hidden-menu {
+    left: 0;
+  }
+  .hidden-menu-ticker:checked ~ .btn-menu span.first {
+    transform: rotate(45deg);
+    top: 8px;
+    
+  }
+  .hidden-menu-ticker:checked ~ .btn-menu span.second {
+    opacity: 0;
+  }
+  .hidden-menu-ticker:checked ~ .btn-menu span.third {
+    transform: rotate(-45deg);
+    top: -8px;    
+  }
+
+  

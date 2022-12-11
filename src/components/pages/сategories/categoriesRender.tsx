@@ -5,13 +5,14 @@ import useSubCategories from "../../hooks/useSubcategories";
 import Navbar from "../../UI/navbar/navbar";
 import './categories.scss'
 
+
 interface IProps{
     categories: any
 }
 
 
 const CategoriesRender:React.FC<IProps>=({categories})=>{
- 
+
     return(
         <>
             <div className="container">
