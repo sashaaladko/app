@@ -8,12 +8,12 @@ import './chosen-category.scss'
 import { addToCart } from '../../../features/cartSlice'
 
 interface IProps{
-    chosenCategory: any
+    productItems: any
     categoriesName: any
 }
 
 
-const ChosenCategoryRender:React.FC<IProps>=({chosenCategory, categoriesName})=>{
+const ChosenCategoryRender:React.FC<IProps>=({productItems, categoriesName})=>{
 
     const subcategories = useSubCategories('bak')
     console.log(subcategories)
@@ -21,7 +21,7 @@ const ChosenCategoryRender:React.FC<IProps>=({chosenCategory, categoriesName})=>
     const dispatch = useAppDispatch()
 
     function addToCartHandler(){
-        chosenCategory.map((e:any)=>{
+        productItems.map((e:any)=>{
             return  dispatch(addToCart({id: e.id, name : e.Title, price : +e.price}))
         })
     }
@@ -30,10 +30,10 @@ const ChosenCategoryRender:React.FC<IProps>=({chosenCategory, categoriesName})=>
         <>
             <Navbar subcategories={subcategories}/>
             <div className="container">
-                {chosenCategory.map((e:any)=>(
+                {productItems.map((e:any)=>(
                     <div className="wrapperProd">
-                        <h1>{e.Title}</h1>
-                        <button onClick={()=>dispatch(addToCart({id: e.id, name : e.Title, price : +e.price}))}>Добавить в корзину</button>
+                        <h1>{e.product}</h1>
+                        <button onClick={()=>dispatch(addToCart({id: e.id, name : e.product, price : e.priceHippo}))}>Добавить в корзину</button>
                     </div>
                 ))}
             </div>

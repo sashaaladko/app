@@ -2,6 +2,7 @@ import React from "react";
 import './header-styles.scss'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import HeaderMenu from "../headerMenu/headerMenu";
+import { NavLink } from "react-router-dom";
 
 function HeaderComponent() {
 
@@ -9,7 +10,7 @@ function HeaderComponent() {
         <div className="headerWrapper">
             <div className="headerContent">
                 <h1 className="headerTitle">Жмотинка</h1>
-                <div className="cartIcon"><ShoppingCartIcon/></div>
+                <NavLink to="/cart"><div className="cartIcon"><ShoppingCartIcon/></div></NavLink>
             </div>
            <HeaderMenu/>
         </div>

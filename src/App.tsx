@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 import { useAppDispatch } from './components/hooks/reduxHooks';
 import RouteHook from './components/hooks/useRoute';
+import { getDataProd } from './features/productSlice';
 import ThemeContext from './themeContext';
 
 function App() {
@@ -19,11 +20,7 @@ function changeTheme() {
 }
 
 useEffect(()=>{
-  fetch("http://localhost:8000/getObjProds")
-  .then(res=>res.json())
-  .then(result=>{
-    setProd(result)
-  })
+  dispatch(getDataProd())
 }, [])
 
   return (
@@ -32,8 +29,8 @@ useEffect(()=>{
       changeTheme,
     }}>
       <div className="App">
-        {/* <RouteHook /> */}
-        {prod&&prod.map((e:any)=>(
+        <RouteHook />
+        {/* {prod&&prod.map((e:any)=>(
           <>
           <span>{e.id}</span>
           <span>{e.product}</span>
@@ -42,7 +39,7 @@ useEffect(()=>{
           <span>{e.priceEvroopt}</span>
           <span>{e.link}</span>
           </>
-        ))}
+        ))} */}
       </div>
     </ThemeContext.Provider>
   );
