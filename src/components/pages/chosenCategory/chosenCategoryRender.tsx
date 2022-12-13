@@ -15,16 +15,10 @@ interface IProps{
 
 const ChosenCategoryRender:React.FC<IProps>=({productItems, categoriesName})=>{
 
-    const subcategories = useSubCategories('bak')
+    const subcategories = useSubCategories(categoriesName)
     console.log(subcategories)
 
     const dispatch = useAppDispatch()
-
-    function addToCartHandler(){
-        productItems.map((e:any)=>{
-            return  dispatch(addToCart({id: e.id, name : e.Title, price : +e.price}))
-        })
-    }
 
     return(
         <>

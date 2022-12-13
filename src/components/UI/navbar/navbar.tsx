@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import './navbar.scss'
 
 interface IProps{
@@ -17,7 +18,7 @@ const Navbar:React.FC<IProps>=({subcategories})=>{
             </label>
             <ul className="hidden-menu">
                 {subcategories.list&&subcategories.list.map((e:any)=>(
-                    <li><a>{e.title}</a></li>
+                    <NavLink to={`${e.link}`}><li><a>{e.title}</a></li></NavLink>
                 ))}
             </ul>
             

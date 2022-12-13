@@ -39,8 +39,8 @@ function HeaderMenu() {
       {title: "Свинина", link: "pork"},
       {title: "Птица", link: "chicken"},
       {title: "Говядина", link: "beef"},
-      {title: "Полуфабрикаты", link: "prod"},
-      {title: "Колбасы, сосиски", link: "sosages"},
+      {title: "Полуфабрикаты", link: "semifinished"},
+      {title: "Колбасы, сосиски", link: "sausages"},
     ]},
     {title: "Рыба, морепродукты ", link: "fish",  list: [
       {title: "Рыба охлажденная", link: "fishcold"},
@@ -79,7 +79,7 @@ function HeaderMenu() {
            <NavLink to={`/categories/${e.link}`}><li>{e.title}</li></NavLink> 
             <div className="dropDownContent">
               {e.list.map((i)=>(
-                <a>{i.title}</a>
+                <NavLink to={`/categories/${i.link}`}><a>{i.title}</a></NavLink>
               ))}
             </div>
           </div>

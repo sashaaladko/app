@@ -23,8 +23,10 @@ const RouteHook:React.FC = () => {
        {
         path: 'cart',
         element: <CartContainer/>
+       },
+       {
+        path: 'categories/:sublink'
        }
-
         
       ])
 

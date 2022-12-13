@@ -14,13 +14,14 @@ function ChosenCategoryContainer(){
 const params = useParams();
 const categoriesName = params.link
 
-const chosenCategory = useCategories(categoriesName)
-const productItems = useAppSelector((store)=>store.prod.prodItems)
+const productItems = useCategories(categoriesName)
+console.log(productItems)
+//const productItems = useAppSelector((store)=>store.prod.prodItems)
 
     return(
         <>
         <HeaderComponent/>
-        {chosenCategory=='not found'?<NotFound/>: <ChosenCategoryRender productItems={productItems} categoriesName={categoriesName}/>}
+        <ChosenCategoryRender productItems={productItems} categoriesName={categoriesName}/>
            
         </>
     )

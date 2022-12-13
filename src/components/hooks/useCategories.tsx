@@ -1,67 +1,51 @@
-import React from "react";
-import veg from '../../jsons/veg.json'
-import milks from '../../jsons/milks.json'
-import breads from '../../jsons/bread.json'
-import drinks from '../../jsons/drinks.json'
-import meats from '../../jsons/meat.json'
-import fishes from '../../jsons/fish.json'
-import baks from '../../jsons/bak.json'
+import { useAppSelector } from "./reduxHooks";
 
 function useCategories(categoriesName:string|undefined){
-    // const chosenCategories = 
-    // { vegetables: [
-    //         {link: 'vegetables'},
-    //         {name: 'морковь', price: 10},
-    //         {name: 'помидор', price: 120},
-    //         {name: 'огурец', price: 40},
-    //         {name: 'свекла', price: 16},
-    //         {name: 'лимон', price: 13},
-    //         {name: 'апельсин', price: 8},
-    //     ],
-    //     milk: [
-    //         {link: 'milk'},
-    //         {name: 'творог', price: 10},
-    //         {name: 'сметана', price: 120},
-    //         {name: 'йогурт', price: 40},
-    //         {name: 'молоко', price: 16},
-    //         {name: 'кефир', price: 13},
-    //         {name: 'сыр', price: 8},
-    //     ],
-    //     water: [
-    //         {link: 'water'},
-    //         {name: 'вода', price: 10},
-    //         {name: 'кола', price: 120},
-    //         {name: 'пепси', price: 40},
-    //         {name: 'спрайт', price: 16},
-    //         {name: 'фанта', price: 13},
-    //         {name: 'сок', price: 8},
-    //     ],
-    // }
 
-    const vegetables = veg 
-    const milk = milks
-    const drink = drinks
-    const meat = meats
-    const fish = fishes
-    const bak = baks
-    const bread = breads
+    const arr: any[] = []
+
+    const productItems = useAppSelector((store)=>store.prod.prodItems)
+
+    productItems&&productItems.map((e:any)=>{
+        if(e.link=='flour' || e.link=='pasta' || e.link=='beans' || e.link=='oil' || e.link=='spices' || e.link == 'porridge'){
+            return arr.push(e)
+        }
+        else if(e.link=='water' || e.link=='kvas' || e.link=='juice' || e.link=='energetics' || e.link=='soda' || e.link == 'tea' || e.link == 'coffee'){
+            return arr.push(e)
+        }
+        else if(e.link=='fishcold' || e.link=='fishdone' || e.link=='fishfresh' || e.link=='ikra'){
+            return arr.push(e)
+        }
+        else if(e.link=='pork' || e.link=='chicken' || e.link=='beef' || e.link=='semifinished' || e.link=='sausages' ){
+            return arr.push(e)
+        }
+        else if(e.link=='breads' || e.link=='pastry' || e.link=='crackers'){
+            return arr.push(e)
+        }
+        else if(e.link=='veg' || e.link=='fruts' || e.link=='mushrooms' || e.link=='berries' || e.link=='greens'){
+            return arr.push(e)
+        }
+        else if(e.link=='eggs' || e.link=='cheese' || e.link=='milks' || e.link=='butter' || e.link=='sourcream' || e.link == 'deserts' || e.link == 'kefir' || e.link == 'cottage' || e.link=='icecream'){
+            return arr.push(e)
+        }
+    })
 
 
     switch(categoriesName){
-        case "milk":
-            return milk
-        case "water":
-            return drink
-        case "vegetables":
-            return vegetables
         case "bak":
-            return bak
-        case "bread":
-            return bread
-        case "meat":
-            return meat
-        case "fish":
-            return fish
+            return arr
+        case 'milk':
+            return arr
+        case 'vegetables':
+            return arr
+        case 'bread':
+            return arr
+        case 'meat':
+            return arr
+        case 'fish':
+            return arr
+        case 'drinks':
+            return arr
         default:
             return 'not found'
     }

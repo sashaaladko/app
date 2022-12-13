@@ -9,7 +9,7 @@ function HeaderComponent() {
     return(
         <div className="headerWrapper">
             <div className="headerContent">
-                <h1 className="headerTitle">Жмотинка</h1>
+                <NavLink to="/"><h1 className="headerTitle">Жмотинка</h1></NavLink>
                 <NavLink to="/cart"><div className="cartIcon"><ShoppingCartIcon/></div></NavLink>
             </div>
            <HeaderMenu/>

@@ -41,7 +41,7 @@ function useSubCategories(subCategoriesName:string|undefined){
           {title: "Капуста морская, чука", link: "chuka"},
           {title: "Икра", link: "ikra"},
         ]},
-        {title: "Вода, напитки", link: "water", list: [
+        {title: "Вода, напитки", link: "drinks", list: [
           {title: "Вода", link: "waters"},
           {title: "Квас", link: "kvas"},
           {title: "Соки", link: "juice"},

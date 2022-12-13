@@ -10,7 +10,7 @@ function MainPage() {
         <>
         <HeaderComponent/>
          <div className="mainContainer">
-            <img className="mainImg" alt='logo' src={String(logo)}/>
+            {/* <img className="mainImg" alt='logo' src={String(logo)}/> */}
             <span className="firstMainText">Начни экономить уже сейчас!</span>
             <span className="secondMainText">Собери свою корзину</span>
             <div className="thirdTextContainer"><span className="thirdMainText">И узнай, в каком магазине ты больше всего сэкономишь!</span></div>

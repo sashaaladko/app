@@ -6,6 +6,11 @@ import {ReactComponent as ArrowTop} from '../../../img/arrowTop.svg'
 
 import {ReactComponent as ArrowDown} from '../../../img/arrow-down-1-svgrepo-com.svg'
 import ButtonComponent from "../../UI/button/buttonComponent";
+import { useLoadScript } from "@react-google-maps/api";
+import MapContainer from "../map/mapContainer";
+import { Wrapper } from "@googlemaps/react-wrapper";
+
+import Map from "../map/mapContainer";
 
 interface IProps{
     cartItem:CartData[];
@@ -20,19 +25,15 @@ const Cart:React.FC<IProps>=({cartItem, theme, incrAmountProductInCart, decrAmou
     
 const [isFormClicked, setisFormClicked]=useState<boolean>(false)
     function pay(){
-        
         setisFormClicked(true)
-        
     }
-
+    
+    const {isLoaded} = useLoadScript({googleMapsApiKey: "AIzaSyASM6kY7nNQfeNAvrpsyrkT8a0GzsxBRkE"})
         return (
             <>
             <div className={`cartPage ${theme}`} >
                 
                 <div className="cartWrapper">
-                    <div className="btnPay">
-                    <ButtonComponent color="orange" text="Оплатить" size="small" func={pay} />
-                    </div>
                
                     {cartItem.map((e)=>{
               
@@ -57,6 +58,11 @@ const [isFormClicked, setisFormClicked]=useState<boolean>(false)
                     })}
                     </div>
             </div>
+            {/* <Wrapper apiKey="AIzaSyASM6kY7nNQfeNAvrpsyrkT8a0GzsxBRkE">
+            @ts-ignore
+                <Map/>
+                <Marker position={position} />
+            </Wrapper> */}
            
             </>
               
