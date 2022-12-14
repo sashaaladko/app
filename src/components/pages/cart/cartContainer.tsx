@@ -39,21 +39,21 @@ function CartContainer() {
         return totalPrice.reduce((a: number, b: number)=>a+b, inval)
     }
 
-    // if(cartItem.length<1){
+    if(cartItem.length<1){
 
-    //     return (
-    //         <div >
-    //         <HeaderComponent/>
-    //         <h1>ваша корзина пуста</h1>
-    //         </div>
-    //     )
-    // }
+        return (
+            <div >
+            <HeaderComponent/>
+            <h1>ваша корзина пуста</h1>
+            </div>
+        )
+    }
 
         return(
             <>
 
             <HeaderComponent />
-            <Cart cartItem={cartItem}  incrAmountProductInCart={incrAmountProductInCart} decrAmountProductInCart={decrAmountProductInCart} />
+            <Cart cartItem={cartItem} incrAmountProductInCart={incrAmountProductInCart} decrAmountProductInCart={decrAmountProductInCart} theme={undefined} color={undefined} clearCart={clearCart}/>
                     
        </>
         )

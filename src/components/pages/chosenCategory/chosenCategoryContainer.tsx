@@ -15,7 +15,6 @@ const params = useParams();
 const categoriesName = params.link
 
 const productItems = useCategories(categoriesName)
-console.log(productItems)
 //const productItems = useAppSelector((store)=>store.prod.prodItems)
 
     return(

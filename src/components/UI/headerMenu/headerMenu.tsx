@@ -79,7 +79,7 @@ function HeaderMenu() {
            <NavLink to={`/categories/${e.link}`}><li>{e.title}</li></NavLink> 
             <div className="dropDownContent">
               {e.list.map((i)=>(
-                <NavLink to={`/categories/${i.link}`}><a>{i.title}</a></NavLink>
+                <NavLink to={`/categories/${e.link}/${i.link}`}><a>{i.title}</a></NavLink>
               ))}
             </div>
           </div>

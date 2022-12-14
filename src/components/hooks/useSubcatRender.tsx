@@ -2,231 +2,260 @@ import { useAppSelector } from "./reduxHooks";
 
 function useSubcatRender(categoriesName:string|undefined){
 
-    //const arrFlour: any[] = []
-    // const arrPasta: any[] = []
-    // const arrBeans: any[] = []
-    // const arrFlour: any[] = []
-    // const arrFlour: any[] = []
-    // const arrFlour: any[] = []
-    // const arrFlour: any[] = []
-    // const arrFlour: any[] = []
-    // const arrFlour: any[] = []
-    // const arrFlour: any[] = []
-    // const arrFlour: any[] = []
-    // const arrFlour: any[] = []
-    // const arrFlour: any[] = []
-    // const arrFlour: any[] = []
-    // const arrFlour: any[] = []
-    // const arrFlour: any[] = []
-    // const arrFlour: any[] = []
-    // const arrFlour: any[] = []
-    // const arrFlour: any[] = []
-    // const arrFlour: any[] = []
-
-    const arr: any[] = [[]]
+    const arrFlour: any[] = []
+    const arrPasta: any[] = []
+    const arrBeans: any[] = []
+    const arrOil: any[] = []
+    const arrSpices: any[] = []
+    const arrPorridge: any[] = []
+    const arrSouces: any[] = []
+    const arrWater: any[] = []
+    const arrKvas: any[] = []
+    const arrJuice: any[] = []
+    const arrEnergetics: any[] = []
+    const arrSoda: any[] = []
+    const arrTea: any[] = []
+    const arrCoffee: any[] = []
+    const arrFishcold: any[] = []
+    const arrFishdone: any[] = []
+    const arrFishfresh: any[] = []
+    const arrIkra: any[] = []
+    const arrPork: any[] = []
+    const arrChicken: any[] = []
+    const arrBeef: any[] = []
+    const arrSemifinished: any[] = []
+    const arrSausages: any[] = []
+    const arrBreads: any[] = []
+    const arrPastry: any[] = []
+    const arrCrackers: any[] = []
+    const arrVeg: any[] = []
+    const arrFrut: any[] = []
+    const arrMushrooms: any[] = []
+    const arrBerries: any[] = []
+    const arrGreens: any[] = []
+    const arrEggs: any[] = []
+    const arrCheese: any[] = []
+    const arrMilks: any[] = []
+    const arrButter: any[] = []
+    const arrSourcream: any[] = []
+    const arrDeserts: any[] = []
+    const arrKefir: any[] = []
+    const arrCottage: any[] = []
+    const arrIcecream: any[] = []
+    const arrChips: any[] = []
 
     const productItems = useAppSelector((store)=>store.prod.prodItems)
 
     productItems&&productItems.map((e:any)=>{
         if(e.link=='flour'){
-            return arr[0].push(e)
+            return arrFlour.push(e)
         }
         else if(e.link=='pasta'){
-            return arr[1].push(e)
+            return arrPasta.push(e)
         }
         else if(e.link=='beans'){
-            return arr[2].push(e)
+            return arrBeans.push(e)
         }
         else if(e.link=='oil'){
-            return arr[3].push(e)
+            return arrOil.push(e)
         }
         else if(e.link=='spices'){
-            return arr[4].push(e)
+            return arrSpices.push(e)
+        }
+        else if(e.link=='souces'){
+            return arrSouces.push(e)
+        }
+        else if(e.link=='chips'){
+            return arrChips.push(e)
         }
         else if(e.link=='porridge'){
-            return arr[5].push(e)
+            return arrPorridge.push(e)
         }
         else if(e.link=='water'){
-            return arr[6].push(e)
+            return arrWater.push(e)
         }
         else if(e.link=='kvas'){
-            return arr[7].push(e)
+            return arrKvas.push(e)
         }
         else if(e.link=='juice'){
-            return arr[8].push(e)
+            return arrJuice.push(e)
         }
         else if(e.link=='energetics'){
-            return arr[9].push(e)
+            return arrEnergetics.push(e)
         }
         else if(e.link=='soda'){
-            return arr[10].push(e)
+            return arrSoda.push(e)
         }
         else if(e.link=='tea'){
-            return arr[11].push(e)
+            return arrTea.push(e)
         }
         else if(e.link=='coffee'){
-            return arr[12].push(e)
+            return arrCoffee.push(e)
         }
         else if(e.link=='fishcold'){
-            return arr[13].push(e)
+            return arrFishcold.push(e)
         }
         else if(e.link=='fishdone'){
-            return arr[14].push(e)
+            return arrFishdone.push(e)
         }
         else if(e.link=='fishfresh'){
-            return arr[15].push(e)
+            return arrFishfresh.push(e)
         }
         else if(e.link=='ikra'){
-            return arr[16].push(e)
+            return arrIkra.push(e)
         }
         else if(e.link=='pork' ){
-            return arr[17].push(e)
+            return arrPork.push(e)
         }
         else if(e.link=='chicken'){
-            return arr[18].push(e)
+            return arrChicken.push(e)
         }
         else if(e.link=='beef'){
-            return arr[19].push(e)
+            return arrBeef.push(e)
         }
         else if(e.link=='semifinished'){
-            return arr[20].push(e)
+            return arrSemifinished.push(e)
         }
         else if(e.link=='sausages'){
-            return arr[21].push(e)
+            return arrSausages.push(e)
         }
         else if(e.link=='breads'){
-            return arr[22].push(e)
+            return arrBreads.push(e)
         }
         else if(e.link=='pastry'){
-            return arr[23].push(e)
+            return arrPastry.push(e)
         }
         else if(e.link=='crackers'){
-            return arr[24].push(e)
+            return arrCrackers.push(e)
         }
         else if(e.link=='veg'){
-            return arr[25].push(e)
+            return arrVeg.push(e)
         }
         else if(e.link=='fruts'){
-            return arr[26].push(e)
+            return arrFrut.push(e)
         }
         else if(e.link=='mushrooms'){
-            return arr[27].push(e)
+            return arrMushrooms.push(e)
         }
         else if(e.link=='berries'){
-            return arr[28].push(e)
+            return arrBerries.push(e)
         }
         else if(e.link=='greens'){
-            return arr[29].push(e)
+            return arrGreens.push(e)
         }
         else if(e.link=='eggs'){
-            return arr[30].push(e)
+            return arrEggs.push(e)
         }
         else if(e.link=='cheese'){
-            return arr[31].push(e)
+            return arrCheese.push(e)
         }
         else if(e.link=='milks'){
-            return arr[32].push(e)
+            return arrMilks.push(e)
         }
         else if(e.link=='butter'){
-            return arr[33].push(e)
+            return arrButter.push(e)
         }
         else if(e.link=='sourcream'){
-            return arr[34].push(e)
+            return arrSourcream.push(e)
         }
         else if(e.link=='deserts'){
-            return arr[35].push(e)
+            return arrDeserts.push(e)
         }
         else if(e.link=='kefir'){
-            return arr[36].push(e)
+            return arrKefir.push(e)
         }
         else if(e.link=='cottage'){
-            return arr[37].push(e)
+            return arrCottage.push(e)
         }
         else if(e.link=='icecream'){
-            return arr[38].push(e)
+            return arrIcecream.push(e)
         }
     })
 
 
     switch(categoriesName){
         case "flour":
-            return arr[0]
+            return arrFlour
         case 'pasta':
-            return arr[1]
+            return arrPasta
         case 'beans':
-            return arr[2]
+            return arrBeans
         case 'oil':
-            return arr[3]
+            return arrOil
         case 'spices':
-            return arr[4]
+            return arrSpices
         case 'porridge':
-            return arr[5]
+            return arrPorridge
+        case 'souces':
+            return arrSouces
+        case 'chips':
+            return arrChips
         case 'water':
-            return arr[6]
+            return arrWater
         case "kvas":
-            return arr[7]
+            return arrKvas
         case 'juice':
-            return arr[8]
+            return arrJuice
         case 'energetics':
-            return arr[9]
+            return arrEnergetics
         case 'soda':
-            return arr[10]
+            return arrSoda
         case 'tea':
-            return arr[11]
+            return arrTea
         case 'coffee':
-            return arr[12]
+            return arrCoffee
         case 'fishcold':
-            return arr[13]
+            return arrFishcold
         case "fishdone":
-            return arr[14]
+            return arrFishdone
         case 'fishfresh':
-            return arr[15]
+            return arrFishfresh
         case 'ikra':
-            return arr[16]
+            return arrIkra
         case 'pork':
-            return arr[17]
+            return arrPork
         case 'chicken':
-            return arr[18]
+            return arrChicken
         case 'beef':
-            return arr[19]
+            return arrBeef
         case 'semifinished':
-            return arr[20]
+            return arrSemifinished
         case 'sausages':
-            return arr[21]
+            return arrSausages
         case 'breads':
-            return arr[22]
+            return arrBreads
         case "pastry":
-            return arr[23]
+            return arrPastry
         case 'crackers':
-            return arr[24]
+            return arrCrackers
         case 'veg':
-            return arr[25]
+            return arrVeg
         case 'fruts':
-            return arr[26]
+            return arrFrut
         case 'mushrooms':
-            return arr[27]
+            return arrMushrooms
         case 'berries':
-            return arr[28]
+            return arrBerries
         case 'greens':
-            return arr[29]
+            return arrGreens
         case 'eggs':
-            return arr[30]
+            return arrEggs
         case 'cheese':
-            return arr[31]
+            return arrCheese
         case 'milks':
-            return arr[32]
+            return arrMilks
         case 'butter':
-            return arr[33]
+            return arrButter
         case 'sourcream':
-            return arr[34]
+            return arrSourcream
         case "deserts":
-            return arr[35]
+            return arrDeserts
         case 'kefir':
-            return arr[36]
+            return arrKefir
         case 'cottage':
-            return arr[37]
+            return arrCottage
         case 'icecream':
-            return arr[38]
+            return arrIcecream
 
         default:
             return 'not found'

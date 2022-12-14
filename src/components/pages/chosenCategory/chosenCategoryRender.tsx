@@ -16,7 +16,6 @@ interface IProps{
 const ChosenCategoryRender:React.FC<IProps>=({productItems, categoriesName})=>{
 
     const subcategories = useSubCategories(categoriesName)
-    console.log(subcategories)
 
     const dispatch = useAppDispatch()
 

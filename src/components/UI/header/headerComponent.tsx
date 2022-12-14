@@ -11,6 +11,7 @@ function HeaderComponent() {
             <div className="headerContent">
                 <NavLink to="/"><h1 className="headerTitle">Жмотинка</h1></NavLink>
                 <NavLink to="/cart"><div className="cartIcon"><ShoppingCartIcon/></div></NavLink>
+                <span>filter</span>
             </div>
            <HeaderMenu/>
         </div>

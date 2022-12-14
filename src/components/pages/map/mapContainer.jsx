@@ -2,10 +2,10 @@ import { GoogleMap, Marker, MarkerF, LoadScript } from "@react-google-maps/api";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import '../cart/cart.scss'
 
-function MapContainer(){
+function MapContainer({address}){
   const google = window.google;
   /*global google*/
-    const evroopt = useMemo(() => ([
+    const evrooptAddress = useMemo(() => ([
         {lat:53.840148,
         lng: 27.568784,
       key:1},
@@ -23,15 +23,34 @@ function MapContainer(){
       key:5},
     ]),[])
 
+    const hippoAddress = useMemo(() => ([
+      {lat:53.859164,
+      lng: 27.46307,
+    key:1},
+      {lat:53.899976,
+      lng: 27.441268,
+    key:2},
+      {lat:53.870601,
+      lng: 27.551438,
+    key:3},
+      {lat:53.851198,
+      lng: 27.545643,
+    key:4},
+      {lat:53.875045,
+      lng: 27.594871,
+    key:5},
+  ]),[])
+
     return(
       <>
-       <LoadScript
+       {/* <LoadScript
         googleMapsApiKey="AIzaSyASM6kY7nNQfeNAvrpsyrkT8a0GzsxBRkE"
-      ></LoadScript>
-       <GoogleMap zoom={10} center={{lat: 53.897690, lng: 27.549419}} mapContainerClassName="mapContainer">
-            {evroopt.map((e)=>(
+      ></LoadScript> */}
+       <GoogleMap zoom={12} center={{lat: 53.897690, lng: 27.549419}} mapContainerClassName="mapContainer">
+            {address&&address.map((e)=>(
                 <MarkerF key={e.key} position={{lat:e.lat, lng: e.lng}}/>
             ))}
+
              {/* <MarkerF key={1} position={{lat:53.840148, lng: 27.568784}}/> */}
         </GoogleMap>
       </>

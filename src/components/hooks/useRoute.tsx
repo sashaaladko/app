@@ -3,6 +3,8 @@ import { useRoutes } from "react-router-dom";
 import CartContainer from "../pages/cart/cartContainer";
 import ChosenCategoryContainer from "../pages/chosenCategory/chosenCategoryContainer";
 import MainPage from "../pages/manePage/mainPage";
+import NotFound from "../pages/notFound/notFound";
+import SubCategories from "../pages/subCategories/subCategories";
 import CategoriesContainer from "../pages/сategories/categoriesContainer";
 
 
@@ -25,8 +27,11 @@ const RouteHook:React.FC = () => {
         element: <CartContainer/>
        },
        {
-        path: 'categories/:sublink'
-       }
+        path: 'categories/:link/:sublink',
+        element: <SubCategories/>
+       },
+       {path: '*',
+        element: <NotFound/>}
         
       ])
 
