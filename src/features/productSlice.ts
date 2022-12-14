@@ -21,7 +21,7 @@ const initialState: ProdState={
 export const getDataProd:any = createAsyncThunk(
     'outlet/getDataOutlet',
       async function json(){
-        const url = "http://localhost:8080/getObjProds"
+        const url = "http://localhost:8080/zhmot-app/getObjProds"
         const response = await fetch(url)
         const dataProd = await response.json()
         return (dataProd)

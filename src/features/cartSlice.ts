@@ -4,6 +4,8 @@ export type CartData = {
     id: string;
     name:string|undefined;
     price: number;
+    priceHippo: number;
+    priceEvroopt: number;
     cartAmount?: any;
 }
 

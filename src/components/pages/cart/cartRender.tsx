@@ -9,7 +9,7 @@ import ButtonComponent from "../../UI/button/buttonComponent";
 import { useLoadScript } from "@react-google-maps/api";
 import MapContainer from "../map/mapContainer";
 import { Wrapper } from "@googlemaps/react-wrapper";
-
+import RemoveIcon from '@mui/icons-material/Remove';
 import Map from "../map/mapContainer";
 
 interface IProps{
@@ -17,16 +17,29 @@ interface IProps{
     theme?: string;
     incrAmountProductInCart: (id:string)=>void;
     decrAmountProductInCart: (id:string)=>void;
-    imgRender?: (id:string)=>any;
     color?: string;
 }
 
-const Cart:React.FC<IProps>=({cartItem, theme, incrAmountProductInCart, decrAmountProductInCart,  imgRender, color})=> {
+const Cart:React.FC<IProps>=({cartItem, theme, incrAmountProductInCart, decrAmountProductInCart, color})=> {
     
-const [isFormClicked, setisFormClicked]=useState<boolean>(false)
-    function pay(){
-        setisFormClicked(true)
-    }
+    const [shop, setShop] = useState<string>('')
+    const[evroopt, setEvroopt] = useState<number>(0)
+    const[hippo, setHippo] = useState<number>(0)
+
+    cartItem.map((e:any)=>{
+        setEvroopt(evroopt+e.priceEvroopt)
+        setHippo(hippo+e.priceHippo)
+        if(evroopt<hippo){
+            setShop('Евроопт')
+        }
+        else if(hippo<evroopt){
+            setShop('Гиппо')
+        }
+        else if(hippo==evroopt){
+            setShop('Одинаково')
+        }
+    })
+    
     
     const {isLoaded} = useLoadScript({googleMapsApiKey: "AIzaSyASM6kY7nNQfeNAvrpsyrkT8a0GzsxBRkE"})
         return (
@@ -48,16 +61,20 @@ const [isFormClicked, setisFormClicked]=useState<boolean>(false)
                                 <span className="price">{e.price*e.cartAmount} BYN</span>
                             </div>
                             <div className="quantity">
-                                <ButtonComponent  name={`btn ${theme}`} func={()=>incrAmountProductInCart(e.id)}/>
+                                <RemoveIcon onClick={()=>incrAmountProductInCart(e.id)}/>
                                 <span className="amount">{e.cartAmount}</span>
-                                <ButtonComponent  name={`btn ${theme}`} func={()=>decrAmountProductInCart(e.id)}/>
+                                <span>{e.priceHippo}</span>
+                                <span>{e.priceEvroopt}</span>
+                                <RemoveIcon  onClick={()=>decrAmountProductInCart(e.id)}/>
                             </div>
+                            <span>Ваша корзина обойдется вам дешевле: {shop}</span>
                         </div>
                         </>
                        )
                     })}
                     </div>
             </div>
+            <MapContainer/>
             {/* <Wrapper apiKey="AIzaSyASM6kY7nNQfeNAvrpsyrkT8a0GzsxBRkE">
             @ts-ignore
                 <Map/>

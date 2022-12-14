@@ -27,7 +27,7 @@ const ChosenCategoryRender:React.FC<IProps>=({productItems, categoriesName})=>{
                 {productItems.map((e:any)=>(
                     <div className="wrapperProd">
                         <h1>{e.product}</h1>
-                        <button onClick={()=>dispatch(addToCart({id: e.id, name : e.product, price : e.priceHippo}))}>Добавить в корзину</button>
+                        <button onClick={()=>dispatch(addToCart({id: e.id, name : e.product, price : e.lowestPrice, priceHippo: e.priceHippo, priceEvroopt: e.priceEvroopt}))}>Добавить в корзину</button>
                     </div>
                 ))}
             </div>

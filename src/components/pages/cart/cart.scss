@@ -2,3 +2,55 @@
     height: 500px;
     width: 500px;
 }
+
+.cartContainer{
+    display: flex;
+    padding: 8px 16px 38px;
+    margin-top: 50px;
+    border-radius: 8px; 
+    margin-left: 20px;
+    min-width: 1000px;
+    float: left
+}
+
+h2, .amount{
+    height: 28px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px;
+}
+
+.amount{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.quantity {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.infoCart{
+    margin: 46px;
+    flex:5
+}
+
+.btn {
+    margin: 10px;
+}
+
+.cartPage{
+    display: flex;
+    flex-direction: row;
+
+}
+.cartWrapper{
+    display: flex;
+    flex-direction: column;
+}
+
+
+
