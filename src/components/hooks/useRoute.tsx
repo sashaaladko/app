@@ -1,5 +1,6 @@
  import React from "react"
 import { useRoutes } from "react-router-dom";
+import AboutUs from "../pages/AboutUs/AboutUs";
 import CartContainer from "../pages/cart/cartContainer";
 import ChosenCategoryContainer from "../pages/chosenCategory/chosenCategoryContainer";
 import MainPage from "../pages/manePage/mainPage";
@@ -30,8 +31,13 @@ const RouteHook:React.FC = () => {
         path: 'categories/:link/:sublink',
         element: <SubCategories/>
        },
+       {
+        path: 'aboutUs',
+        element: <AboutUs/>
+       },
        {path: '*',
-        element: <NotFound/>}
+        element: <NotFound/>
+      },
         
       ])
 

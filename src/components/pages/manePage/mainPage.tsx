@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import FooterComponent from "../../UI/footer/footerComponent";
 import HeaderComponent from "../../UI/header/headerComponent";
 import './mainPage-styles.scss'
 
@@ -16,6 +17,7 @@ function MainPage() {
             <div className="thirdTextContainer"><span className="thirdMainText">И узнай, в каком магазине ты больше всего сэкономишь!</span></div>
             <Link to={'/categories'}><button className="mainBtn">Начать</button></Link>
         </div>
+        <FooterComponent/>
         </>
        
     )

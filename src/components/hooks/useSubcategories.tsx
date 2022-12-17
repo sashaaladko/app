@@ -29,16 +29,10 @@ function useSubCategories(subCategoriesName:string|undefined){
         ]},
         {title: "Мясо, колбасные изделия", link: "meat",  list: [
           {title: "Свинина", link: "pork"},
-          {title: "Птица", link: "chicken"},
-          {title: "Говядина", link: "beef"},
-          {title: "Полуфабрикаты", link: "prod"},
           {title: "Колбасы, сосиски", link: "sosages"},
         ]},
         {title: "Рыба, морепродукты ", link: "fish",  list: [
-          {title: "Рыба охлажденная", link: "fishcold"},
           {title: "Рыба и морепродукты готовые", link: "fishdone"},
-          {title: "Рыба свежемороженая", link: "fishfresh"},
-          {title: "Капуста морская, чука", link: "chuka"},
           {title: "Икра", link: "ikra"},
         ]},
         {title: "Вода, напитки", link: "drinks", list: [
@@ -58,9 +52,7 @@ function useSubCategories(subCategoriesName:string|undefined){
           {title: "Соль, сахар, специи", link: "spices"},
           {title: "Хлопья, каши, мюсли", link: "porridge"},
           {title: "Соусы", link: "souces"},
-          {title: "Орехи, сухофрукты, семечки", link: "nuts"},
           {title: "Чипсы, сухарики", link: "chips"},
-          {title: "Консервы", link: "canned"},
         ]},
     ]
 

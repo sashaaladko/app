@@ -8,6 +8,8 @@ import { useAppDispatch } from "../../hooks/reduxHooks";
 import Navbar from "../../UI/navbar/navbar";
 import HeaderComponent from "../../UI/header/headerComponent";
 import useSubCategories from "../../hooks/useSubcategories";
+import { useRecoilValue } from "recoil";
+import { filterAtom } from "../../../recoil/filter";
 
 
 const SubCategories = () => {
@@ -17,8 +19,17 @@ const SubCategories = () => {
     const subCat = params.link
     const prodItems = useSubcatRender(subCategoriesName)
     const subcategories = useSubCategories(subCat)
-    console.log(subCat)
     const dispatch = useAppDispatch()
+    const filter = useRecoilValue(filterAtom)
+
+    if(filter==="ascend"){
+              //@ts-ignore
+        prodItems.sort((a,b)=>a.lowestPrice-b.lowestPrice)
+    }
+    else if(filter==='desc'){
+              //@ts-ignore
+        prodItems.sort((a,b)=> b.lowestPrice-a.lowestPrice)
+    }
     return(
         <>
         <HeaderComponent/>
@@ -28,6 +39,7 @@ const SubCategories = () => {
                 {prodItems&&prodItems.map((e:any)=>(
                     <div className="wrapperProd">
                         <h1>{e.product}</h1>
+                        <span className="priceProd">{e.lowestPrice}</span>
                         <button onClick={()=>dispatch(addToCart({id: e.id, name : e.product, price : e.lowestPrice, priceHippo: e.priceHippo, priceEvroopt: e.priceEvroopt}))}>Добавить в корзину</button>
                     </div>
                 ))}

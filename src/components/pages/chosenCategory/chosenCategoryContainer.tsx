@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { useParams } from "react-router-dom";
 import { useAppSelector } from "../../hooks/reduxHooks";
 import useCategories from "../../hooks/useCategories";
@@ -8,8 +8,8 @@ import '../сategories/categories.scss'
 import ChosenCategoryRender from "./chosenCategoryRender";
 
 
-function ChosenCategoryContainer(){
 
+function ChosenCategoryContainer(){
 
 const params = useParams();
 const categoriesName = params.link
@@ -21,7 +21,6 @@ const productItems = useCategories(categoriesName)
         <>
         <HeaderComponent/>
         <ChosenCategoryRender productItems={productItems} categoriesName={categoriesName}/>
-           
         </>
     )
 }

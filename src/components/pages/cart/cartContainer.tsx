@@ -30,11 +30,18 @@ function CartContainer() {
     }
 
 
-    function totalPrice():number{
+    function totalPriceHippo():number{
         let inval:number = 0
         const totalPrice = cartItem.map((e: CartData)=>{
-           return e.price*e.cartAmount
-           
+           return e.priceHippo*e.cartAmount
+        })
+        return totalPrice.reduce((a: number, b: number)=>a+b, inval)
+    }
+
+    function totalPriceEvroopt():number{
+        let inval:number = 0
+        const totalPrice = cartItem.map((e: CartData)=>{
+           return e.priceEvroopt*e.cartAmount
         })
         return totalPrice.reduce((a: number, b: number)=>a+b, inval)
     }
@@ -43,19 +50,19 @@ function CartContainer() {
 
         return (
             <div >
-            <HeaderComponent/>
-            <h1>ваша корзина пуста</h1>
+                <HeaderComponent/>
+                <h1>ваша корзина пуста</h1>
             </div>
         )
     }
 
         return(
             <>
-
-            <HeaderComponent />
-            <Cart cartItem={cartItem} incrAmountProductInCart={incrAmountProductInCart} decrAmountProductInCart={decrAmountProductInCart} theme={undefined} color={undefined} clearCart={clearCart}/>
-                    
-       </>
+                <HeaderComponent />
+                <Cart cartItem={cartItem} incrAmountProductInCart={incrAmountProductInCart} 
+                decrAmountProductInCart={decrAmountProductInCart} theme={undefined} clearCart={clearCart}
+                totalPriceEvroopt={totalPriceEvroopt} totalPriceHippo={totalPriceHippo}/>   
+            </>
         )
 
    

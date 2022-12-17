@@ -1,19 +1,19 @@
 
 import { PropaneSharp } from '@mui/icons-material';
-import React, { useEffect, useState } from 'react';
-import './App.css';
+import React, { Suspense, useEffect, useState } from 'react';
+import { RecoilRoot } from 'recoil';
+import './App.scss';
 import { useAppDispatch } from './components/hooks/reduxHooks';
-import RouteHook from './components/hooks/useRoute';
+
 import { getDataProd } from './features/productSlice';
 import ThemeContext from './themeContext';
 
+const RouteHook = React.lazy(() =>import ('./components/hooks/useRoute'))
 function App() {
   const dispatch = useAppDispatch();
-  const [prod, setProd] = useState<any>()
   var[theme, setTheme] = useState<string>('light')
   var[color, setColor] = useState<string>('black')
-
-  
+const logo = require("./img/grey-loader.gif")
 function changeTheme() {
   theme=='light' ? setTheme('dark') : setTheme('light')
   theme=='light' ? setColor('white') : setColor('black')
@@ -23,26 +23,24 @@ useEffect(()=>{
   dispatch(getDataProd())
 }, [])
 
-  return (
-    <ThemeContext.Provider value={{
-      color, theme, 
-      changeTheme,
-    }}>
-      <div className="App">
-        <RouteHook />
-        {/* {prod&&prod.map((e:any)=>(
-          <>
-          <span>{e.id}</span>
-          <span>{e.product}</span>
-          <span>{e.type}</span>
-          <span>{e.priceHippo}</span>
-          <span>{e.priceEvroopt}</span>
-          <span>{e.link}</span>
-          </>
-        ))} */}
-      </div>
-    </ThemeContext.Provider>
-  );
+console.log(dispatch(getDataProd()))
+
+  return  (
+    
+      <RecoilRoot>
+      <ThemeContext.Provider value={{
+        color, theme, 
+        changeTheme,
+      }}>
+        <Suspense fallback={<div className='loader'><img src={String(logo)}/></div>}>
+        <div className="App">
+          <RouteHook />
+        </div>
+        </Suspense>
+      </ThemeContext.Provider>
+    </RecoilRoot>
+
+  )
 }
 
 export default App;

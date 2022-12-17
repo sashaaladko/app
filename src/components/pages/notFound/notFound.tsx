@@ -1,9 +1,15 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import './not-found.scss'
 
 function NotFound(){
     return(
-        <div>404</div>
+        <>
+            <h1>404</h1>
+            <div>Страница, которую вы ищете, не найдена</div>
+            <NavLink to="/">Перейти на главную</NavLink>
+        </>
+
     )
 }
 
