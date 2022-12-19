@@ -21,9 +21,10 @@ interface IFormInputs{
  
 function FormContainer(){
     const cartItems = useAppSelector((store)=>store.cart.cartItems)
-    const [address, setAddress] = useState<string>('')
+    const [postdata, setPostdata] = useState<any>()
     const shop_id = useRecoilValue(shopAtom)
     const cart_amount = cartItems.length
+    const [postResult, setPostResult] = useState(null);
     const {handleSubmit, register, formState:{errors}} = useForm<IFormInputs>({
         defaultValues:{
             firstName:'',
@@ -36,12 +37,52 @@ function FormContainer(){
             comment: '',
         }
     })
-  const onSubmit = (data:IFormInputs) =>{
 
-    console.log({...data, cartItems, shop_id, cart_amount});
-console.log(shop_id)
-    // data.payment=="карта" ? setPaymentId(1) : setPaymentId(2)
+    const fortmatResponse = (res:any) => {
+        return JSON.stringify(res, null, 2);
+    }
+      
+      async function postData() {
+        try {
+          const res = await fetch('http://localhost:8080/zhmot-app/delivery', {
+            method: "post",
+            headers: {
+              "Content-Type": "application/json",
+              "x-access-token": "token-value",
+            },
+            body: JSON.stringify(postdata),
+          });
+    
+          if (!res.ok) {
+            const message = `An error has occured: ${res.status} - ${res.statusText}`;
+            throw new Error(message);
+          }
+
+          const data = await res.json();
+
+      const result = {
+        status: res.status + "-" + res.statusText,
+        headers: {
+          "Content-Type": res.headers.get("Content-Type"),
+          "Content-Length": res.headers.get("Content-Length"),
+        },
+        data: data,
+      };
+//@ts-ignore
+      setPostResult(fortmatResponse(result));
+    } catch (err:any) {
+      setPostResult(err.message);
+    }
   }
+
+
+  const onSubmit = (data:IFormInputs) =>{
+    setPostdata({...data, cartItems, shop_id, cart_amount})
+    console.log(postdata);
+    postData()
+  }
+
+
     return(
         <>
         <HeaderComponent/>
