@@ -13,7 +13,7 @@ function HeaderMenu() {
 
   const categories = [
     {title: "Молочные продукты, яйца", link: "milk", list: [
-      {title: "яйца", link: "eggs"},
+      {title: "Яйца", link: "eggs"},
       {title: "Сыр", link: "cheese"},
       {title: "Молоко", link: "milks"},
       {title: "Масло, маргарин", link: "butter"},

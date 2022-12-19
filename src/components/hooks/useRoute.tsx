@@ -1,5 +1,6 @@
  import React from "react"
 import { useRoutes } from "react-router-dom";
+import FormContainer from "../form/form";
 import AboutUs from "../pages/AboutUs/AboutUs";
 import CartContainer from "../pages/cart/cartContainer";
 import ChosenCategoryContainer from "../pages/chosenCategory/chosenCategoryContainer";
@@ -34,6 +35,10 @@ const RouteHook:React.FC = () => {
        {
         path: 'aboutUs',
         element: <AboutUs/>
+       },
+       {
+        path: 'delivery',
+        element: <FormContainer/>
        },
        {path: '*',
         element: <NotFound/>

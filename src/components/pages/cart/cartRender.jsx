@@ -5,6 +5,9 @@ import RemoveIcon from '@mui/icons-material/Remove';
 import AddIcon from '@mui/icons-material/Add';
 import { evrooptAddress } from "./constans";
 import { hippoAddress } from "./constans";
+import { NavLink } from "react-router-dom";
+import { useSetRecoilState } from "recoil";
+import {shopAtom} from '../../../recoil/form'
 
 
 const Cart=({cartItem, theme, incrAmountProductInCart, decrAmountProductInCart, clearCart,
@@ -14,40 +17,36 @@ const Cart=({cartItem, theme, incrAmountProductInCart, decrAmountProductInCart, 
     const[evroopt, setEvroopt] = useState(0)
     const[hippo, setHippo] = useState(0)
     const[address, setAddress] = useState([])
+    const shopValue = useSetRecoilState(shopAtom)
 
     function calculateHandler(){
-        // let inval = 0
-        // const totalEvroopt = cartItem.map((e)=>{
-        //    return e.priceEvroopt
-        // })
-        // const totalHippo = cartItem.map((e)=>{
-        //     return e.priceHippo
-        // })
-        // const evr =  totalEvroopt.reduce((a, b)=>a+b, inval)
-        // const hipp= totalPriceHippo.reduce((a,b)=>a+b, inval)
-        // setEvroopt(evr)
-        // setHippo(hipp)
+
         if(totalPriceEvroopt()<totalPriceHippo()){
             setShop('Евроопт')
             setAddress(evrooptAddress)
+            shopValue('1')
         }
         else if(totalPriceHippo()<totalPriceEvroopt()){
             setShop('Гиппо')
             setAddress(hippoAddress)
+            shopValue('2')
         }
         else if(totalPriceEvroopt()==totalPriceHippo()){
             setShop('Одинаково')
             setAddress(evrooptAddress)
+            shopValue('1')
         }
     }
     
    const {isLoaded} = useLoadScript({googleMapsApiKey: "AIzaSyASM6kY7nNQfeNAvrpsyrkT8a0GzsxBRkE"})
+
         return (
             <div className="cart">
             <div className={`cartPage ${theme}`} >
                 <div className="cartWrapper">
                     <div className="btnContainer">
                         <button className="cartBtn" onClick={calculateHandler}>Рассчитать</button>
+                        <NavLink to="/delivery"><button className="delivery cartBtn">Заказать доставку</button></NavLink>
                         <button className="cartBtn" onClick={clearCart}>Очистить корзину</button>
                     </div>
                 
